@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,body{
+            width:100%;height: 100%;
+        }
+        .box{
+            width:60%;height:50%;
+            border:2px solid #000;
+            position: absolute;
+            left:0;right:0;bottom: 0;
+            top:0;margin: auto;
+        }
+        .box div{
+            width:12.5%;height:100%;
+            box-sizing: border-box;
+            float: left;
+            border:1px solid #ccc;
+            font-size: 30px;
+            text-align: center;
+
+        }
+        .box div:nth-child(2n){
+            background: #888;
+        }
+    </style>
+
+    <script>
+        // var a="岳英俊1"
+        //
+        // if (a=="岳英俊"){
+        //     console.log("yes")
+        // }else{
+        //     console.log("no")
+        // }
+        //
+        // for (var i=0;i<10;i++){
+        //     console.log(i)
+        // }
+
+        //100-200   3...1    4...2   5...3
+
+        // for (var i=100;i<=200;i++){
+        //
+        //     if(i%3==1&&i%4==2&&i%5==3){
+        //         console.log(i)
+        //     }
+        // }
+
+
+        // 鸡兔同笼  35头   94 脚   鸡兔各多少只
+
+        // for(var tu=1;tu<35;tu++){
+        //     var ji=35-tu;
+        //     if (tu*4+ji*2==94){
+        //         console.log(tu)
+        //         console.log(ji)
+        //     }
+        //
+        // }
+
+
+         var datas={
+            49:{
+                div:0,audio:400+400*(1/8)
+            },
+             50:{
+                 div:1,audio:400+400*(2/8)
+             },
+             51:{
+                 div:2,audio:400+400*(3/8)
+             },
+             52:{
+                 div:3,audio:400+400*(4/8)
+             },
+             53:{
+                 div:4,audio:400+400*(5/8)
+             },
+             54:{
+                 div:5,audio:400+400*(6/8)
+             },
+             55:{
+                 div:6,audio:400+400*(7/8)
+             },
+             56:{
+                 div:7,audio:400+400*(8/8)
+             }
+         }
+
+         window.onload=function (ev) {
+             var audio=new AudioContext()
+             var divs=document.querySelectorAll(".box div");
+             var ao;
+             document.onkeydown=function (ev) {
+
+                 ao=audio.createOscillator()
+                 var an=audio.createAnalyser()
+                 var gain=audio.createGain()
+                 ao.connect(an)
+                 ao.connect(gain)
+                 gain.connect(audio.destination)
+
+                 var code=ev.keyCode
+                 ao.frequency.setValueAtTime(datas[code]["audio"],audio.currentTime)
+
+                 ao.start(audio.currentTime)
+                divs[datas[code]["div"]].style.boxShadow="0 0 20px #000 inset";
+
+             }
+
+             document.onkeyup=function (ev) {
+                 var code=ev.keyCode;
+                 divs[datas[code]["div"]].style.boxShadow="none";
+                 ao.stop(audio.currentTime)
+             }
+         }
+
+
+    </script>
+</head>
+<body>
+
+ <div class="box">
+     <div>1</div>
+     <div>2</div>
+     <div>3</div>
+     <div>4</div>
+     <div>5</div>
+     <div>6</div>
+     <div>7</div>
+     <div>8</div>
+ </div>
+
+</body>
+</html>
