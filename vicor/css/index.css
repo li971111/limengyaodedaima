@@ -1,0 +1,124 @@
+header{
+    width: 100%;
+    height: 0.88rem;
+    text-align: center;
+    line-height: 0.88rem;
+    font-size: 0.2rem;
+    background: #FFFFFF;
+}
+header>img{
+    width:0.92rem;
+    height: 0.3rem;
+    line-height:0.88rem;
+}
+.infor{
+    width: 100%;
+    height: 0.88rem;
+    text-align: center;
+    line-height: 0.88rem;
+    font-size: 0.24rem;
+    box-sizing: border-box;
+    padding: 0 0.25rem 0 0.25rem;
+    border-top: 1px solid #DDDDDD;
+    background: #FFFFFF;
+}
+.infor > a{
+    display: block;
+    width: 1rem;
+    font-size: 0.2rem;
+    margin-right: 1rem;
+    color: rgba(0,0,0,0.7);
+    float: left;
+}
+.infor > a:nth-child(4){
+    margin-right: 0;
+}
+.pic{
+    width: 100%;
+    height: 3.84rem;
+    margin-bottom: 0.79rem;
+}
+.pic>a{
+    width: 100%;
+    height: 3.84rem;
+}
+.pic>a>img{
+    width: 100%;
+    height: 3.84rem;
+}
+.goods{
+   width: 100%;
+    height: 6.6rem;
+    padding: 0 0.24rem;
+    box-sizing: border-box;
+ }
+.title{
+    width: 100%;
+    height: 0.91rem;
+    text-align: center;
+    margin-bottom: 0.57rem;
+}
+.title>img{
+    width: 1.48rem;
+    height: 0.91rem;
+
+}
+.goods>.goods-list{
+    height: 5.11rem;
+}
+.goods-list>.goods-item{
+    width: 3.09rem;
+    height: 5.11rem;
+    float: left;
+    margin-right: 0.24rem;
+    background: #FFFFFF;
+}
+.goods-item>.thumb{
+    width: 100%;
+    height: 2.89rem;
+    margin-bottom: 0.2rem;
+}
+.goods-item>.thumb>a{
+    display: block;
+    width: 100%;
+    height: 2.89rem;
+}
+.goods-item>.thumb>a>img{
+    width: 100%;
+    height: 2.89rem;
+}
+.goods-item>i{
+    margin-left: 0.17rem;
+}
+.goods-item>.fir>a{
+    height: 0.12rem;
+    font-size: 0.14rem;
+    font-family: "Arial Narrow";
+}
+.goods-item>.sec{
+    font-size: 0.24rem;
+    margin-top: 0.1rem;
+}
+
+.goods-item>.price-more{
+    width:2.68rem;
+    height: 0.43rem;
+  margin: 0.5rem 0.18rem 0.1rem 0.18rem;
+    box-sizing: border-box;
+}
+.goods-item>.price-more>span{
+    font-size: 0.18rem;
+    font-family: "Arial Narrow";
+    float: left;
+    line-height: 0.43rem;
+}
+.goods-item>.price-more>span>a{
+    font-size:0.26rem ;
+    font-family: 'MicrosoftYaHei-Bold';
+}
+.goods-item>.price-more>.more{
+    width: 1.52rem;
+    height: 0.43rem;
+    background:#ffcb3f ;
+    float: right;
+}
